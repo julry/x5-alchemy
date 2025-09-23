@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'X5SansVF';
+    src: url('../assets/fonts/X5SansVF-Bold.otf') format('opentype'),
+    local('X5 Sans VF-Bold'), local('X5SansVFBold'), local('X5 Sans VF Bold'),
+    local('X5SansVF-Bold'), local('X5SansVF-bold');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'X5SansVF';
+    src: url('../assets/fonts/X5SansVF-Light.otf') format('opentype'),
+    local('X5 Sans VF-Light'), local('X5SansVFLight'), local('X5 Sans VF Light'),
+    local('X5SansVF-Light'), local('X5SansVF-light');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'X5SansVF';
+    src: url('../assets/fonts/X5SansVF-Regular.otf') format('opentype'),
+    local('X5 Sans VF-Regular'), local('X5SansVFRegular'), local('X5 Sans VF Regular'),
+    local('X5SansVF-Regular'), local('X5SansVF-regular');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'X5SansVF';
+    src: url('../assets/fonts/X5SansVF-Black.otf') format('opentype'),
+    local('X5 Sans VF-Black'), local('X5SansVFBlack'), local('X5 Sans VF Black'),
+    local('X5SansVF-Black'), local('X5SansVF-black');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'X5SansVF';
+    src: url('../assets/fonts/X5SansVF-Medium.otf') format('opentype'),
+    local('X5 Sans VF-Medium'), local('X5SansVFMedium'), local('X5 Sans VF Medium'), 
+    local('X5SansVF-Medium'), local('X5SansVF-medium');
+    font-weight: 500;
+    font-style: normal;
+}
