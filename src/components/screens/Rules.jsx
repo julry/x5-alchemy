@@ -9,7 +9,6 @@ import { BotDialog } from "../shared/BotDialog";
 import { UserDialog } from "../shared/UserDialog";
 import { Element } from "../shared/Element";
 import {elements} from '../../constants/elements';
-import { IconButton } from "../shared/Button";
 import { Trash } from "../shared/svgs/Trash";
 import { GameHeader } from "../shared/GameHeader";
 import { useProgress } from "../../contexts/ProgressContext";
@@ -170,8 +169,8 @@ export const Rules = () => {
                                             <Element element={exampleElement1} />
                                         </motion.div>
                                         <motion.div 
-                                            initial={{zIndex: 4}}
                                             animate={{opacity: 0, scale: 0}}
+                                            initial={{zIndex: 4, scale: 1}}
                                             transition={{
                                                 delay: 1.5,
                                                 repeat: Infinity,

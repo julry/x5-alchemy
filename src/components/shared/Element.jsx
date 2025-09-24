@@ -1,26 +1,34 @@
 import styled from "styled-components";
 import { useSizeRatio } from "../../hooks/useSizeRatio";
 import { useDraggable, useDroppable } from '@dnd-kit/core';
+import { motion } from "framer-motion";
 
-const Wrapper = styled.div`
+const Wrapper = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: column;
-    position: relative;
+    position: ${({$isDraggable}) => $isDraggable ? 'absolute' : 'relative'};
     height: ${({$ratio}) => $ratio * 80}px;
     max-height: ${({$ratio}) => $ratio * 80}px;
+    top: ${({$top}) => $top}px;
+    width: auto;
+    left: ${({$left}) => $left}px;
+    justify-self: center;
+    transform-origin: center center;
+    width: ${({$width}) => $width}px;
 `;
 
 const TextWrapper = styled.div`
     position: absolute;
-    bottom: ${({$ratio, $bottom}) => $bottom ?? $ratio * -1}px;
+    bottom: ${({$ratio, $bottom}) => $bottom ?? $ratio * -3.5}px;
     height: ${({$ratio}) => $ratio * 13.33}px;
     font-size: ${({$ratio}) => $ratio * 8.89}px;
-    max-width: ${({$ratio}) => $ratio * 84}px;
     padding: 0 ${({$ratio}) => $ratio * 4}px;
     left: ${({$left}) => ($left ?? 50)}%;
     transform: translateX(-50%);
+    font-weight: 700;
+    line-height: 95%;
 
     & p {
         text-align: center;
@@ -39,7 +47,7 @@ const SvgWrapper = styled.div`
 
 const PicWrapper = styled.div`
     position: relative;
-    width: 100%;
+    width: auto;
     height: 100%;
     overflow-y: visible;
 `;
@@ -54,20 +62,42 @@ const ImageWrapper = styled.img`
     transform: translateX(-50%);
 `;
 
+const Explode = styled(motion.div)`
+    position: absolute;
+    height: ${({$ratio}) => $ratio * 120}px;
+    width: ${({$ratio}) => $ratio * 120}px;
+    left: 50%;
+    top: 50%;
+    background: #B8ED95;
+    background: radial-gradient(circle,rgba(184, 237, 149, 1) 0%, rgba(184, 237, 149, 0) 100%);
+    filter: blur(5px);
+    border-radius: 50%;
+    z-index: 30;
+`;
+
 export const Element = ({isDraggable, element, className, pathColor = '#0C3615',}) => {
     const ratio = useSizeRatio();
 
     const { attributes, listeners, setNodeRef: setDraggableRef, transform } = useDraggable({
-        id: element.id,
+        id: element.extId,
         disabled: !isDraggable,
+       data: {
+         extId: element.extId,
+         id: element.id,
+       }
     });
 
-    const { setNodeRef: setDroppableRef, isOver } = useDroppable({
-        id: element.id,
+    const { setNodeRef: setDroppableRef } = useDroppable({
+        id: element.extId,
         disabled: !isDraggable,
+        data: {
+         extId: element.extId,
+         id: element.id,
+         position: element.position
+       }
     });
 
-    const style = transform ? {
+    const style = transform && isDraggable ? {
         transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`,
         zIndex: 1000,
     } : {};
@@ -77,15 +107,31 @@ export const Element = ({isDraggable, element, className, pathColor = '#0C3615',
         setDroppableRef(node);
     };
 
+
     return (
         <Wrapper 
             $ratio={ratio} 
             className={className} 
+            exit={isDraggable && {scale: 0, opacity: 0}}
             ref={setRefs}
+            $isDraggable={isDraggable}
+            $left={element.position?.x ?? 0}
+            $top={element.position?.y ?? 0}
+            $width={(element.fullWidth ?? 84) * ratio}
             style={style}
             {...listeners}
             {...attributes}
         >
+            {element.isCreated && (
+                <Explode 
+                    $ratio={ratio} 
+                    initial={{x: '-50%', y: '-50%', opacity: 1}}
+                    animate={{opacity: 0, scale: 0}}
+                    transition={{
+                        duration: 1.5
+                    }}
+                />
+            )}
             <PicWrapper>
                 <SvgWrapper $pathColor={pathColor} $width={element.width * ratio} $height={element.height * ratio}>
                     {typeof element.svgElement === 'function' ? element.svgElement() : null}
