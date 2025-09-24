@@ -15,7 +15,7 @@ const ProgressContext = createContext(INITIAL_STATE);
 
 export function ProgressProvider(props) {
     const { children } = props
-    const [currentScreen, setCurrentScreen] = useState(getUrlParam('screen') || 0);
+    const [currentScreen, setCurrentScreen] = useState(+getUrlParam('screen') || 0);
     const shownScreen = screens[currentScreen]?.component;
 
     // const client = useRef();
@@ -40,7 +40,8 @@ export function ProgressProvider(props) {
 
 
     function next() {
-        const nextScreenIndex = currentScreen + 1;
+        const nextScreenIndex = +currentScreen + 1;
+        console.log('nextScreenIndex', nextScreenIndex);
         if (nextScreenIndex > screens.length - 1) return;
 
         setCurrentScreen(nextScreenIndex);

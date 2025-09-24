@@ -67,6 +67,7 @@ export const Intro = () => {
             return;
         }
 
+        next();
     }
 
     return (

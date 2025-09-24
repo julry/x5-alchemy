@@ -12,6 +12,7 @@ import {elements} from '../../constants/elements';
 import { IconButton } from "../shared/Button";
 import { Trash } from "../shared/svgs/Trash";
 import { GameHeader } from "../shared/GameHeader";
+import { useProgress } from "../../contexts/ProgressContext";
 
 const Content = styled(FlexWrapper)`
     position: absolute;
@@ -88,15 +89,16 @@ const GameHeaderStyled = styled(GameHeader)`
     }
 `;
 
+const elementsRules = elements.filter((elem) => !['creativity', 'effectivity'].includes(elem.id));
+
 export const Rules = () => {
     const ratio = useSizeRatio();
-    // const [part, setPart] = useState(0);
-    const [part, setPart] = useState(3);
+    const {next} = useProgress();
+    const [part, setPart] = useState(0);
 
     const handleNext = () => {
         const newPart = part + 1;
         setPart();
-
         setTimeout(() =>  setPart(newPart), 300);
     }
 
@@ -108,7 +110,7 @@ export const Rules = () => {
             <MergeField />
             <Darken $top={(part > 2 ? -150 : 332) * ratio}/>
             <Content $ratio={ratio}>
-                <ElementsField/>
+                <ElementsField shownElements={(![0,3].includes(part)) ? elementsRules : elements}/>
             </Content>
             <AnimatePresence>
                     {
@@ -218,7 +220,7 @@ export const Rules = () => {
                                     exit={{opacity: 0, height: 0}}
                                 >
                                     <BotDialog key={`${part}_bot`} part={part} />
-                                    <UserDialog key={`${part}_dialog`} isCenter bottom={40} text="Спасибо!"/>
+                                    <UserDialog key={`${part}_dialog`} isCenter bottom={40} text="Спасибо!" onNext={() => next()}/>
                                 </motion.div>
                             </>
                         )

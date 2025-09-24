@@ -15,6 +15,7 @@ const DialogWrapper = styled(motion.div)`
 const Dialog = styled.div`
     height:100%;
     width:100%;
+    background-color: #444A45;
 `;
 
 const Dialog0 = styled(Dialog)`

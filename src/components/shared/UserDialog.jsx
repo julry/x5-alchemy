@@ -18,6 +18,7 @@ const Dialog = styled.div`
     clip-path:url(#bgblur_0_418_4632_clip_path);
     height:100%;
     width:100%;
+    background-color: #444A45;
 `;
 
 const ButtonStyled = styled(ArrowButton)`

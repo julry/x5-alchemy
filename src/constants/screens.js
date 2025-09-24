@@ -1,3 +1,4 @@
+import { Game } from "../components/screens/Game";
 import { Intro } from "../components/screens/Intro";
 import { Rules } from "../components/screens/Rules";
 
@@ -9,5 +10,9 @@ export const screens = [
     {
         id: 1,
         component: Rules
+    },
+    {
+        id: 2,
+        component: Game
     },
 ];
