@@ -1,6 +1,6 @@
 import { FTClient } from 'ft-client';
 import { createContext, useContext, useEffect, useRef, useState } from 'react'
-import { screens } from "../constants/screens";
+import { preloadedImages, screens } from "../constants/screens";
 import { getUrlParam } from "../utils/getUrlParam";
 import {useImagePreloader} from '../hooks/useImagePreloader';
 
@@ -28,7 +28,7 @@ export function ProgressProvider(props) {
 
     }, []);
     
-    useImagePreloader([]);
+    useImagePreloader(preloadedImages);
 
     const registrateEmail = async ({email, isAdsAgreed}) => {
        try {
