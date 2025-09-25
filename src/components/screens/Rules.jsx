@@ -54,8 +54,8 @@ const AnimatedButton = styled(motion.div)`
     justify-content: center;
     width: ${({$ratio}) => $ratio * 48}px;
     height:  ${({$ratio}) => $ratio * 48}px;
-    right:  ${({$ratio}) => $ratio * -80}px;
-    bottom:  ${({$ratio}) => $ratio * -80}px;
+    right:  ${({$ratio}) => $ratio * -70}px;
+    bottom:  ${({$ratio}) => $ratio * -120}px;
     background: #C879F7;
     box-shadow: inset -1.6px 1.6px 3.2px rgba(255, 255, 255, 0.25), inset 1.6px -1.6px 3.2px rgba(0, 0, 0, 0.25), 0 0 28px ${({$ratio}) => $ratio * 3}px #B8ED95;
     border-radius: ${({$ratio}) => $ratio * 12.8}px;
@@ -69,7 +69,7 @@ const AnimatedButton = styled(motion.div)`
 
 const AnimatedButtonStatic = styled(AnimatedButton)`
     bottom: auto;
-    top: ${({$ratio}) => $ratio * 277}px;
+    top: ${({$ratio}) => $ratio * 315}px;
     right: ${({$ratio}) => $ratio * 40}px;
     box-shadow: inset -1.6px 1.6px 3.2px rgba(255, 255, 255, 0.25), inset 1.6px -1.6px 3.2px rgba(0, 0, 0, 0.25);
     transform: none;

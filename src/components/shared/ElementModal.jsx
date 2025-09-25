@@ -18,9 +18,8 @@ const ContentPlace = styled.div`
     position: relative;
     width: 100%;
     margin: ${({$ratio}) => $ratio * 136}px auto 0;
-    
+
     @media screen and (max-height: 700px) {
-        max-height: ${({$ratio}) => $ratio * 554}px;
         max-width: 90%;
     }
 `;
@@ -64,7 +63,9 @@ const Pic = styled.div`
         & div:last-child {
             left: 0%;
             transform: none;
-            padding-left: ${({$pl}) => $pl}px;
+            & p{
+                padding-left: ${({$pl}) => $pl}px;
+            }
         }
     }
 `

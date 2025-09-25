@@ -77,9 +77,8 @@ const ElementsWrapper = styled.div`
 
 const RemoveButton = styled(IconButton)`
     position: absolute;
-    bottom: 0;
-    right: 0;
-    right: ${({$ratio}) => $ratio * 30}px; 
+    bottom: var(--spacing_x2);
+    right: var(--spacing_x8);
     z-index: 65;
 `;
 
