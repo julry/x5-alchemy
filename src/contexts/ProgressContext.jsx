@@ -2,6 +2,7 @@ import { FTClient } from 'ft-client';
 import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { screens } from "../constants/screens";
 import { getUrlParam } from "../utils/getUrlParam";
+import {useImagePreloader} from '../hooks/useImagePreloader';
 
 
 const INITIAL_STATE = {
@@ -24,7 +25,10 @@ export function ProgressProvider(props) {
             API_LINK,
             'x5-innovation-center'
         );
+
     }, []);
+    
+    useImagePreloader([]);
 
     const registrateEmail = async ({email, isAdsAgreed}) => {
        try {

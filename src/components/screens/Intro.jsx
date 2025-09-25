@@ -6,10 +6,22 @@ import { useSizeRatio } from "../../hooks/useSizeRatio";
 import { ArrowButton } from "../shared/Button";
 import { Logo } from "../shared/svgs/Logo";
 import { useProgress } from "../../contexts/ProgressContext";
+import pic from '../../assets/images/intro.png';
 
 const Wrapper = styled(FlexWrapper)`
     position: relative;
     align-items: flex-start;
+`;
+
+const Picture = styled.img`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: ${({$ratio}) => $ratio * 510}px;
+    object-fit: cover;
+    object-position: 0 0;
 `;
 
 const InfoBlock = styled.div`
@@ -47,12 +59,24 @@ const InfoBlock = styled.div`
 `;
 
 const ArrowButtonStyled = styled(ArrowButton)`
-    position: relative;
+    position: absolute;
     z-index: 4;
     margin-top: auto;
     margin-left: auto;
     width: ${({$ratio}) => $ratio * 212}px;
+    top: ${({$ratio}) => $ratio * 426}px;
+    right: ${({$ratio}) => $ratio * 25}px;
     border-radius: var(--border-radius-lg);
+
+    @media screen and (max-width: 380px){
+        right: ${({$ratio}) => $ratio * 35}px;
+        top: ${({$ratio}) => $ratio * 502}px;
+    }
+
+    @media screen and (max-width: 375px){
+        right: ${({$ratio}) => $ratio * 40}px;
+        top: ${({$ratio}) => $ratio * 436}px;
+    }
 `;
 
 export const Intro = () => {
@@ -82,8 +106,9 @@ export const Intro = () => {
                         <p><b>Твоя миссия</b> — не найти, а изобрести идеальный карьерный трек под кодовым названием «X5». Используй наши наработки, цифровые прототипы и свою интуицию. Если справишься, то получишь <b>подарок от нашей команды:</b> сертификат на 10 000 рублей в Пятёрочку и два сертификата на 5 000 рублей в Перекрёсток.</p>
                     )
                 }
-            <ArrowButtonStyled $ratio={ratio} onClick={handleClick} />
             </InfoBlock>
+            <ArrowButtonStyled $ratio={ratio} onClick={handleClick} />
+            <Picture $ratio={ratio} src={pic} alt="" />
         </Wrapper>
     )
 }

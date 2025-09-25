@@ -85,14 +85,13 @@ const RemoveButton = styled(IconButton)`
 
 export const Game = () => {
     const ratio = useSizeRatio();
-    const {next} = useProgress();
     const [page, setPage] = useState(1);
     const [fieldElemets, setFieldElements] = useState([]);
     const [unitsAmount, setUnitsAmount] = useState(0);
     const [availableElements, setAvailableElements] = useState(elements);
     const [discoveredElements, setDiscoveredElements] = useState([]);
     const [isInfo, setIsInfo] = useState(false);
-    const [isForm, setIsForm] = useState(true);
+    const [isForm, setIsForm] = useState(false);
     const [isDiscoveredModal, setIsDiscoveredModal] = useState({ shown: false, element: null });
     const mergeField = useRef();
 
@@ -145,7 +144,7 @@ export const Game = () => {
     
     const handleClose = () => {
         setIsDiscoveredModal({shown: false, element: null});
-        
+
         if (unitsAmount === 11) {
             setIsForm(true);
         }
