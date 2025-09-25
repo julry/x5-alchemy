@@ -92,18 +92,26 @@ export const Game = () => {
     const [isForm, setIsForm] = useState(false);
     const [isDiscoveredModal, setIsDiscoveredModal] = useState({ shown: false, element: null });
     const mergeField = useRef();
+    const trashBtn = useRef();
 
     const sensors = useSensors(
         useSensor(MouseSensor),
         useSensor(TouchSensor)
     );
 
-    const getRandomPosition = () => (
-        {
-            x: Math.random() * (mergeField?.current?.getBoundingClientRect().width - 80 * ratio),
-            y: Math.random() * (mergeField?.current?.getBoundingClientRect().height - 80 * ratio),
+    const getRandomPosition = () => {
+        let x = Math.random() * (mergeField?.current?.getBoundingClientRect().width - 80 * ratio);
+        let y = Math.random() * (mergeField?.current?.getBoundingClientRect().height - 80 * ratio);
+        let startTrashX = trashBtn?.current?.getBoundingClientRect().x - mergeField?.current?.getBoundingClientRect().x;
+        let startTrashY = trashBtn?.current?.getBoundingClientRect().y - mergeField?.current?.getBoundingClientRect().y;
+
+        if (((x + 80 * ratio) > startTrashX)  && (y + 80 * ratio) > startTrashY) {
+            x = x - trashBtn?.current?.getBoundingClientRect().width;
+            y = y - trashBtn?.current?.getBoundingClientRect().height;
         }
-    )
+
+        return ({x, y});
+    }
     
     const combineElements = (element1, element2) => {
         const sortedElements = [element1.data.current.id, element2.data.current.id].sort((a) => -1 * +!!['work', 'flexibility'].includes(a));
@@ -148,6 +156,20 @@ export const Game = () => {
         }
     }
 
+
+    const getElementPosition = (positionX, positionY) => {
+        let x = Math.min(mergeField?.current?.getBoundingClientRect().width, positionX);
+        let y = Math.min(mergeField?.current?.getBoundingClientRect().height, positionY);
+        let startTrashX = trashBtn?.current?.getBoundingClientRect().x - mergeField?.current?.getBoundingClientRect().x;
+        let startTrashY = trashBtn?.current?.getBoundingClientRect().y - mergeField?.current?.getBoundingClientRect().y;
+
+        if (((x + 100 * ratio) > startTrashX) && (y + 80 * ratio) > startTrashY) {
+            x = startTrashX - 100 * ratio;
+            y = startTrashY - 80 * ratio;
+        }
+
+        return {x, y}
+    }
     const handleDragEnd = (event) => {
         const { active, over } = event;
 
@@ -167,8 +189,8 @@ export const Game = () => {
                         ? {
                             ...element,
                             position: {
-                                x: Math.max(0, Math.min(mergeField?.current?.getBoundingClientRect().width, element.position.x + delta.x)),
-                                y: Math.max(0, Math.min(mergeField?.current?.getBoundingClientRect().height, element.position.y + delta.y))
+                                x: Math.max(0, getElementPosition(element.position.x + delta.x, element.position.y + delta.y).x),
+                                y: Math.max(0, getElementPosition(element.position.x + delta.x, element.position.y + delta.y).y)
                             }
                         }
                         : element
@@ -197,7 +219,7 @@ export const Game = () => {
                             <Element key={element.extId} element={element} isDraggable/>
                         ))}
                     </AnimatePresence>
-                    <RemoveButton $ratio={ratio} onClick={remove}>
+                    <RemoveButton $ratio={ratio} onClick={remove} ref={trashBtn}>
                         <Trash />
                     </RemoveButton>
                 </ElementsWrapper>
