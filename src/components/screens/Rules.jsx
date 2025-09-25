@@ -88,7 +88,7 @@ const GameHeaderStyled = styled(GameHeader)`
     }
 `;
 
-const elementsRules = elements.filter((elem) => !['creativity', 'effectivity'].includes(elem.id));
+const elementsRules = elements.filter((elem) => !['flexibility', 'effectivity'].includes(elem.id));
 
 export const Rules = () => {
     const ratio = useSizeRatio();
@@ -101,8 +101,8 @@ export const Rules = () => {
         setTimeout(() =>  setPart(newPart), 300);
     }
 
-    const exampleElement1 = elements.find(({id}) => id === 'creativity');
-    const exampleElement2 = elements.find(({id}) => id === 'effectivity');
+    const exampleElement1 = elements.find(({id}) => id === 'effectivity');
+    const exampleElement2 = elements.find(({id}) => id === 'flexibility');
 
     return (
        <>

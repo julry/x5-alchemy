@@ -5,7 +5,6 @@ import { ElementsField } from "../shared/ElementsField";
 import { FlexWrapper } from "../shared/ContentWrapper";
 import { MergeField } from "../shared/MergeField";
 import { useSizeRatio } from "../../hooks/useSizeRatio";
-import { useProgress } from "../../contexts/ProgressContext";
 import { combinations, elements } from '../../constants/elements';
 import { ArrowButton, IconButton } from "../shared/Button";
 import { Trash } from "../shared/svgs/Trash";
