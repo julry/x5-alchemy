@@ -37,7 +37,7 @@ export const CookieInfo = ({onClose}) => {
 
     return (
         <BlockStyled $ratio={ratio}>
-            <p><a href="https://pre-prod.fut.ru/cookie" target="_blank" rel="noreferrer">Мы используем куки.</a> Играя, ты соглашаешься с этим.</p>
+            <p><a href="https://fut.ru/cookie" target="_blank" rel="noreferrer">Мы используем куки.</a> Играя, ты соглашаешься с этим.</p>
             <ButtonStyled $ratio={ratio} onClick={onClose}>ОК</ButtonStyled>
         </BlockStyled>
     )

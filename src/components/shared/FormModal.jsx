@@ -22,10 +22,10 @@ const Wrapper = styled(motion.div)`
 const ContentPlace = styled.div`
     position: relative;
     width: 100%;
-    
+    max-width: ${({$ratio}) => $ratio * 380}px;
+
     @media screen and (max-height: 700px) {
-        max-height: ${({ $ratio }) => $ratio * 554}px;
-        max-width: 90%;
+        width: 90%;
     }
 `;
 
@@ -68,15 +68,6 @@ const Input = styled.input`
 
     &::placeholder {
         color: rgba(255, 255, 255, 0.5)
-    }
-`;
-
-const InputWrapper = styled.div`
-    position: relative;
-    width: 100%;
-
-    & + & {
-        margin-top: var(--spacing_x2);
     }
 `;
 
@@ -214,7 +205,7 @@ export const FormModal = () => {
 
     return (
         <Wrapper>
-            <ContentPlace>
+            <ContentPlace $ratio={ratio}>
                 <svg width="100%" height="100%" viewBox="0 0 380 713" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <foreignObject x="-10" y="-9.99997" width="400" height="733"><Content xmlns="http://www.w3.org/1999/xhtml" /></foreignObject><g data-figma-bg-blur-radius="10">
                         <path d="M276.8 713C268.367 713 260.552 708.574 256.216 701.341L224.931 649.159C220.595 641.926 212.78 637.5 204.347 637.5L24 637.5C10.7452 637.5 7.53979e-06 626.755 8.69857e-06 613.5L2.97167e-05 24C3.08755e-05 10.7452 10.7452 2.87539e-05 24 2.99126e-05L147.642 4.07218e-05C156.39 4.14865e-05 164.445 4.75969 168.665 12.4223L192.982 56.5778C197.202 64.2405 205.257 69 214.005 69L356 69.0001C369.255 69.0001 380 79.7452 380 93.0001L380 689C380 702.255 369.255 713 356 713L276.8 713Z" fill="#083617" />

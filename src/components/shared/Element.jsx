@@ -12,7 +12,6 @@ const Wrapper = styled(motion.div)`
     height: ${({$ratio}) => $ratio * 80}px;
     max-height: ${({$ratio}) => $ratio * 80}px;
     top: ${({$top}) => $top}px;
-    width: auto;
     left: ${({$left}) => $left}px;
     justify-self: center;
     transform-origin: center center;
@@ -21,14 +20,16 @@ const Wrapper = styled(motion.div)`
 
 const TextWrapper = styled.div`
     position: absolute;
-    bottom: ${({$ratio, $bottom}) => $bottom ?? $ratio * -3.5}px;
+    bottom: ${({$bottom}) => $bottom ?? 0}px;
     height: ${({$ratio}) => $ratio * 13.33}px;
     font-size: ${({$ratio}) => $ratio * 8.89}px;
-    padding: 0 ${({$ratio}) => $ratio * 4}px;
     left: ${({$left}) => ($left ?? 50)}%;
     transform: translateX(-50%);
     font-weight: 700;
     line-height: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     & p {
         text-align: center;

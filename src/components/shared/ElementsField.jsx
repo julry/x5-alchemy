@@ -8,10 +8,11 @@ const Wrapper = styled.div`
     z-index: 4;
     width: 100%;
     height: 100%;
+    max-width: ${({$ratio}) => $ratio * 390}px;
 
     @media screen and (max-height: 700px) {
         max-height: ${({$ratio}) => $ratio * 504}px;
-        max-width: 90%;
+        width: 90%;
     }
 `;
 
@@ -19,7 +20,6 @@ const ContentWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(5px);
     clip-path:url(#bgblur_0_2017_105_clip_path);
 `;
 

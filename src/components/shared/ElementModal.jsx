@@ -18,10 +18,7 @@ const ContentPlace = styled.div`
     position: relative;
     width: 100%;
     margin: ${({$ratio}) => $ratio * 136}px auto 0;
-
-    @media screen and (max-height: 700px) {
-        max-width: 90%;
-    }
+    max-width: ${({$ratio}) => $ratio * 380}px;
 `;
 
 const ButtonStyled = styled(Button)`

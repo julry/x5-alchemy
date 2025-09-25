@@ -38,24 +38,6 @@ const InfoBlock = styled.div`
     & p {
         padding: ${({$ratio}) => $ratio * 100}px var(--spacing_x5);
     }
-
-    @media screen and (max-width: 380px){
-        width: ${({$ratio}) => $ratio * 446}px;
-        height: ${({$ratio}) => $ratio * 502}px;
-
-        & p {
-            padding: ${({$ratio}) => $ratio * 140}px var(--spacing_x10);
-        }
-    }
-
-     @media screen and (max-width: 375px){
-        width: ${({$ratio}) => $ratio * 380}px;
-        height: ${({$ratio}) => $ratio * 436}px;
-
-        & p {
-            padding: ${({$ratio}) => $ratio * 96}px var(--spacing_x10);
-        }
-    }
 `;
 
 const ArrowButtonStyled = styled(ArrowButton)`
@@ -65,18 +47,8 @@ const ArrowButtonStyled = styled(ArrowButton)`
     margin-left: auto;
     width: ${({$ratio}) => $ratio * 212}px;
     top: ${({$ratio}) => $ratio * 426}px;
-    right: ${({$ratio}) => $ratio * 25}px;
+    right: calc((100% -  ${({$ratio}) => $ratio * 380}px) / 2);
     border-radius: var(--border-radius-lg);
-
-    @media screen and (max-width: 380px){
-        right: ${({$ratio}) => $ratio * 35}px;
-        top: ${({$ratio}) => $ratio * 502}px;
-    }
-
-    @media screen and (max-width: 375px){
-        right: ${({$ratio}) => $ratio * 40}px;
-        top: ${({$ratio}) => $ratio * 436}px;
-    }
 `;
 
 export const Intro = () => {

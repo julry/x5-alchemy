@@ -20,10 +20,7 @@ const ContentPlace = styled.div`
     position: relative;
     width: 100%;
     max-height: 100%;
-    
-    @media screen and (max-height: 700px) {
-        max-width: 80%;
-    }
+    max-width: ${({$ratio}) => $ratio * 380}px;
 `;
 
 const ButtonStyled = styled(Button)`
@@ -59,67 +56,6 @@ const TextWrapper = styled.div`
     }
 `;
 
-const SmallPart = styled.div`
-    & h4, p, li {
-        font-size: ${({ $ratio }) => $ratio * 12}px;
-    }
-
-    li {
-        margin-left:  ${({ $ratio }) => $ratio * 12}px;
-        margin-top:  ${({ $ratio }) => $ratio * 5}px;
-    }
-
-    margin-top: ${({ $ratio }) => $ratio * 16}px;
-`;
-
-const ExpireText = styled.p`
-    font-weight: 700;
-    font-size: ${({ $ratio }) => $ratio * 12}px !important;
-`;
-
-const CodeField = styled.div`
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: ${({ $ratio }) => $ratio * 12}px;
-    height:${({ $ratio }) => $ratio * 48}px;
-    background: rgba(255, 255, 255, 0.2);
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: ${({ $ratio }) => $ratio * 16}px;
-    margin: ${({ $ratio }) => $ratio * 8}px 0 ${({ $ratio }) => $ratio * 4}px;
-`;
-
-const Info = styled.div`
-    margin-top: var(--spacing_x4);
-
-    p + p {
-        margin-top: var(--spacing_x2);
-    }
-`;
-
-const CopyButton = styled.button`
-    outline: none;
-    border: none;
-    background: none;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    & svg {
-        width: var(--spacing_x4);
-        height: var(--spacing_x4);
-    }
-`;
-
-const CopyInfo = styled(CodeField)`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(255, 255, 255, 0.6);
-    color: #083617;
-`;
 
 const Foreigh = styled.div`
     width: 100%;

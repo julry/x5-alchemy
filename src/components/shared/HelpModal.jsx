@@ -17,11 +17,12 @@ const Wrapper = styled(motion.div)`
 const ContentPlace = styled.div`
     position: relative;
     width: 100%;
+    max-width: ${({$ratio}) => $ratio * 380}px;
 `;
 
 const Content = styled.div`
     backdrop-filter:blur(5px);
-    clip-path:url(#bgblur_0_419_5001_clip_path);
+    clip-path:url(#bgblur_0_703_212_clip_path);
     height: 100%; 
     width: 100%;
 `;
@@ -62,6 +63,12 @@ const TextRow = styled.div`
     & + & {
        margin-top: ${({$ratio}) => $ratio * 14}px;
     }
+
+    @media screen and (max-height: 700px) {
+        & + & {
+            margin-top: ${({$ratio}) => $ratio * 12}px;
+        }
+    }
 `;
 
 const CheckSign = styled.div`
@@ -90,14 +97,14 @@ export const CheckModal = ({onClose, discoveredElements = []}) => {
             animate={{opacity: 1}}
             exit={{opacity: 0}}
         >
-            <ContentPlace>
-                <svg width="100%"viewBox="0 0 380 492" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <foreignObject x="-10" y="-9.99985" width="400" height="512"><Content xmlns="http://www.w3.org/1999/xhtml" /></foreignObject><g data-figma-bg-blur-radius="10">
-                <path d="M254.969 492C247.549 492 240.546 488.568 236 482.702L215.147 455.798C210.602 449.933 203.598 446.5 196.178 446.5L24 446.5C10.7452 446.5 4.91711e-06 435.755 6.07589e-06 422.5L1.03963e-05 24.0001C1.1555e-05 10.7453 10.7452 0.000150824 24 0.000151983L142.286 0.000162324C150.784 0.000163067 158.648 4.49388 162.963 11.8149L180.861 42.1854C185.175 49.5064 193.04 54.0001 201.537 54.0001L356 54.0001C369.255 54.0001 380 64.7453 380 78.0001L380 468C380 481.255 369.255 492 356 492L254.969 492Z" fill="#083617"/>
-                <path d="M356 491.5L254.97 491.5C247.704 491.5 240.846 488.139 236.395 482.396L215.543 455.491C210.902 449.504 203.753 446 196.178 446L24 446C11.0213 446 0.500026 435.479 0.500006 422.5L0.500041 24.0001C0.500075 11.0214 11.0214 0.50009 24 0.500091L142.286 0.500101C150.607 0.500102 158.308 4.90001 162.532 12.0685L180.43 42.4396C184.834 49.913 192.862 54.5 201.537 54.5001L356 54.5001C368.979 54.5002 379.5 65.0215 379.5 78.0001L379.5 468C379.5 480.979 368.979 491.5 356 491.5Z" stroke="#60AF2C" strokeOpacity="0.25"/>
+            <ContentPlace $ratio={ratio}>
+                <svg width="100%" height="100%" viewBox="0 0 380 682" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-10" y="-9.99985" width="400" height="702"><Content xmlns="http://www.w3.org/1999/xhtml" ></Content></foreignObject><g data-figma-bg-blur-radius="10">
+                <path d="M254.969 682C247.549 682 240.546 678.568 236 672.702L215.147 645.798C210.602 639.933 203.598 636.5 196.178 636.5L24 636.5C10.7452 636.5 4.91711e-06 625.755 6.07589e-06 612.5L2.70066e-05 24.0001C2.81654e-05 10.7453 10.7452 0.000150824 24 0.000151983L142.286 0.000162324C150.784 0.000163067 158.648 4.49388 162.963 11.8149L180.861 42.1853C185.175 49.5064 193.04 54.0001 201.537 54.0001L356 54.0001C369.255 54.0001 380 64.7453 380 78.0001L380 658C380 671.255 369.255 682 356 682L254.969 682Z" fill="#083617"/>
+                <path d="M356 681.5L254.97 681.5C247.704 681.5 240.846 678.139 236.395 672.396L215.543 645.491C210.902 639.504 203.753 636 196.178 636L24 636C11.0213 636 0.50003 625.479 0.500006 612.5L0.500058 24.0001C0.500092 11.0214 11.0214 0.50009 24.0001 0.500091L142.286 0.500101C150.607 0.500102 158.308 4.90001 162.532 12.0685L180.43 42.4396C184.834 49.913 192.862 54.5 201.537 54.5001L356 54.5001C368.979 54.5002 379.5 65.0215 379.5 78.0001L379.5 658C379.5 670.979 368.979 681.5 356 681.5Z" stroke="#60AF2C" stroke-opacity="0.25"/>
                 </g>
                 <defs>
-                <clipPath id="bgblur_0_419_5001_clip_path" transform="translate(10 9.99985)"><path d="M254.969 492C247.549 492 240.546 488.568 236 482.702L215.147 455.798C210.602 449.933 203.598 446.5 196.178 446.5L24 446.5C10.7452 446.5 4.91711e-06 435.755 6.07589e-06 422.5L1.03963e-05 24.0001C1.1555e-05 10.7453 10.7452 0.000150824 24 0.000151983L142.286 0.000162324C150.784 0.000163067 158.648 4.49388 162.963 11.8149L180.861 42.1854C185.175 49.5064 193.04 54.0001 201.537 54.0001L356 54.0001C369.255 54.0001 380 64.7453 380 78.0001L380 468C380 481.255 369.255 492 356 492L254.969 492Z"/>
+                <clipPath id="bgblur_0_703_212_clip_path" transform="translate(10 9.99985)"><path d="M254.969 682C247.549 682 240.546 678.568 236 672.702L215.147 645.798C210.602 639.933 203.598 636.5 196.178 636.5L24 636.5C10.7452 636.5 4.91711e-06 625.755 6.07589e-06 612.5L2.70066e-05 24.0001C2.81654e-05 10.7453 10.7452 0.000150824 24 0.000151983L142.286 0.000162324C150.784 0.000163067 158.648 4.49388 162.963 11.8149L180.861 42.1853C185.175 49.5064 193.04 54.0001 201.537 54.0001L356 54.0001C369.255 54.0001 380 64.7453 380 78.0001L380 658C380 671.255 369.255 682 356 682L254.969 682Z"/>
                 </clipPath></defs>
                 </svg>
                 <CloseBtn $ratio={ratio} onClick={onClose}>
@@ -155,6 +162,30 @@ export const CheckModal = ({onClose, discoveredElements = []}) => {
                             {discoveredElements.includes('X5Import') && <DoneMark  $ratio={ratio} />}
                         </CheckSign>
                         <p>Работа <GreenText>+</GreenText> Нестандартные решения <GreenText>{'→'}</GreenText>{'\n'}<b>X5 Import</b></p>
+                    </TextRow>
+                     <TextRow $ratio={ratio}>
+                        <CheckSign>
+                            {discoveredElements.includes('X5Club') && <DoneMark  $ratio={ratio} />}
+                        </CheckSign>
+                        <p>Работа <GreenText>+</GreenText> Фокус на пользователях <GreenText>{'→'}</GreenText>{'\n'}<b>Х5 Клуб и Сервис «Пакет»</b></p>
+                    </TextRow>
+                     <TextRow $ratio={ratio}>
+                        <CheckSign>
+                            {discoveredElements.includes('salmon') && <DoneMark  $ratio={ratio} />}
+                        </CheckSign>
+                        <p>Работа <GreenText>+</GreenText> Тренд-watching <GreenText>{'→'}</GreenText>{'\n'}<b>Много лосося</b></p>
+                    </TextRow>
+                     <TextRow $ratio={ratio}>
+                        <CheckSign>
+                            {discoveredElements.includes('5Post') && <DoneMark  $ratio={ratio} />}
+                        </CheckSign>
+                        <p>Работа <GreenText>+</GreenText> Слаженность процессов <GreenText>{'→'}</GreenText>{'\n'}<b>5Post</b></p>
+                    </TextRow>
+                     <TextRow $ratio={ratio}>
+                        <CheckSign>
+                            {discoveredElements.includes('X5Food') && <DoneMark  $ratio={ratio} />}
+                        </CheckSign>
+                        <p>Работа <GreenText>+</GreenText> Надёжность <GreenText>{'→'} </GreenText><b>Х5 Еда</b></p>
                     </TextRow>
                 </TextWrapper>
             </ContentPlace>
