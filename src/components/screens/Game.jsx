@@ -89,7 +89,7 @@ export const Game = () => {
     const [availableElements, setAvailableElements] = useState(elements);
     const [discoveredElements, setDiscoveredElements] = useState([]);
     const [isInfo, setIsInfo] = useState(false);
-    const [isForm, setIsForm] = useState(false);
+    const [isForm, setIsForm] = useState(true);
     const [isDiscoveredModal, setIsDiscoveredModal] = useState({ shown: false, element: null });
     const mergeField = useRef();
     const trashBtn = useRef();
