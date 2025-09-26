@@ -822,13 +822,13 @@ align-items: center;
     z-index: 10;
     transform-origin: 0% 0%;
     overflow: hidden;
-
+    line-height: 112%;
     @media screen and (max-height: 700px){
-        line-height: 101%;
+        line-height: 105%;
     }
 `,m8=k.div`
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
 `,cZ=k(m8)`
     clip-path:url(#bgblur_0_418_4507_clip_path);
 `,fZ=k(m8)`

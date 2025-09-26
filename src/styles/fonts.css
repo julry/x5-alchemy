@@ -2,7 +2,7 @@
     font-family: 'X5SansVF';
     src: url('../assets/fonts/X5-Sans_Bold.ttf') format('truetype'),
     local('X5 Sans VF-Bold'), local('X5SansVFBold'), local('X5 Sans VF Bold'),
-    local('X5-Sans_Bold'), local('X5-Sans_bold');
+    local('X5-Sans_Bold'), local('X5-Sans_bold') local('X5 Sans Bold');
     font-weight: 700;
     font-style: normal;
 }
@@ -10,7 +10,7 @@
     font-family: 'X5SansVF';
     src: url('../assets/fonts/X5-Sans_Light.ttf') format('truetype'),
     local('X5 Sans VF-Light'), local('X5SansVFLight'), local('X5 Sans VF Light'),
-    local('X5-Sans_Light'), local('X5-Sans_light');
+    local('X5-Sans_Light'), local('X5-Sans_light') local('X5 Sans Light');
     font-weight: 300;
     font-style: normal;
 }
@@ -18,7 +18,7 @@
     font-family: 'X5SansVF';
     src: url('../assets/fonts/X5-Sans_Regular.ttf') format('truetype'),
     local('X5 Sans VF-Regular'), local('X5SansVFRegular'), local('X5 Sans VF Regular'),
-    local('X5-Sans_Regular'), local('X5-Sans_regular');
+    local('X5-Sans_Regular'), local('X5-Sans_regular') local('X5 Sans Regular');
     font-weight: 400;
     font-style: normal;
 }
@@ -27,7 +27,7 @@
     font-family: 'X5SansVF';
     src: url('../assets/fonts/X5-Sans_Medium.ttf') format('truetype'),
     local('X5 Sans VF-Medium'), local('X5SansVFMedium'), local('X5 Sans VF Medium'), 
-    local('X5-Sans_Medium'), local('X5-Sans_medium');
+    local('X5-Sans_Medium'), local('X5-Sans_medium') local('X5 Sans Medium');
     font-weight: 500;
     font-style: normal;
 }

@@ -10,15 +10,15 @@ const DialogWrapper = styled(motion.div)`
     z-index: 10;
     transform-origin: 0% 0%;
     overflow: hidden;
-
+    line-height: 112%;
     @media screen and (max-height: 700px){
-        line-height: 101%;
+        line-height: 105%;
     }
 `;
 
 const Dialog = styled.div`
-    height:100%;
-    width:100%;
+    height: 100%;
+    width: 100%;
 `;
 
 const Dialog0 = styled(Dialog)`
