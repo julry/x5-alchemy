@@ -21,7 +21,6 @@ const ContentPlace = styled.div`
 `;
 
 const Content = styled.div`
-    backdrop-filter:blur(5px);
     clip-path:url(#bgblur_0_703_212_clip_path);
     height: 100%; 
     width: 100%;
@@ -61,7 +60,7 @@ const TextRow = styled.div`
     margin-top: ${({$ratio}) => $ratio * 28}px;
 
     & + & {
-       margin-top: ${({$ratio}) => $ratio * 14}px;
+       margin-top: ${({$ratio}) => $ratio * 13}px;
     }
 
     @media screen and (max-height: 700px) {

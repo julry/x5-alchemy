@@ -294,7 +294,6 @@ Error generating stack: `+a.message+`
     width: 100%;
     max-width: ${({$ratio:e})=>e*380}px;
 `,tb=Y.div`
-    backdrop-filter:blur(5px);
     clip-path:url(#bgblur_0_703_212_clip_path);
     height: 100%; 
     width: 100%;
@@ -326,7 +325,7 @@ Error generating stack: `+a.message+`
     margin-top: ${({$ratio:e})=>e*28}px;
 
     & + & {
-       margin-top: ${({$ratio:e})=>e*14}px;
+       margin-top: ${({$ratio:e})=>e*13}px;
     }
 
     @media screen and (max-height: 700px) {

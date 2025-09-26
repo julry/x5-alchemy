@@ -98,7 +98,6 @@ const Tip = styled(motion.div)`
     }
 `;
 
-
 const TIP_TIMEOUT = 60 * 1000;
 const TIP_UNSUCCESS_TIMES = 5;
 
