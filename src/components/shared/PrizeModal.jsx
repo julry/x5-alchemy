@@ -14,6 +14,11 @@ const Wrapper = styled(motion.div)`
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 110%;
+
+    @media screen and (max-height: 700px){
+        line-height: 105%;
+    }
 `;
 
 const ContentPlace = styled.div`
@@ -88,7 +93,7 @@ const CodeField = styled.div`
 `;
 
 const Info = styled.div`
-    margin-top: var(--spacing_x4);
+    margin-top: var(--spacing_x3);
 
     p + p {
         margin-top: var(--spacing_x2);

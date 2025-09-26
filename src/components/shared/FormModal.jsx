@@ -17,6 +17,11 @@ const Wrapper = styled(motion.div)`
     background-color: rgba(0,0,0,0.8);
     padding: var(--spacing_x4);
     backdrop-filter: blur(5px);
+    line-height: 110%;
+
+    @media screen and (max-height: 700px){
+        line-height: 105%;
+    }
 `;
 
 const ContentPlace = styled.div`
@@ -102,6 +107,7 @@ const RadioButtonLabel = styled.label`
     color: rgba(255,255,255, 0.7);
     text-align: left;
     max-width: 300px;
+    line-height: 110%;
 
     & + & {
         margin-top: calc(var(--spacing_x3) / 2);

@@ -420,6 +420,11 @@ Error generating stack: `+a.message+`
     background-color: rgba(0,0,0,0.8);
     padding: var(--spacing_x4);
     backdrop-filter: blur(5px);
+    line-height: 110%;
+
+    @media screen and (max-height: 700px){
+        line-height: 105%;
+    }
 `,cb=k.div`
     position: relative;
     width: 100%;
@@ -487,6 +492,7 @@ Error generating stack: `+a.message+`
     color: rgba(255,255,255, 0.7);
     text-align: left;
     max-width: 300px;
+    line-height: 110%;
 
     & + & {
         margin-top: calc(var(--spacing_x3) / 2);
@@ -629,6 +635,11 @@ Error generating stack: `+a.message+`
     display: flex;
     align-items: center;
     justify-content: center;
+    line-height: 110%;
+
+    @media screen and (max-height: 700px){
+        line-height: 105%;
+    }
 `,Rb=k.div`
     position: relative;
     width: 100%;
@@ -686,7 +697,7 @@ Error generating stack: `+a.message+`
     border-radius: ${({$ratio:e})=>e*16}px;
     margin: ${({$ratio:e})=>e*8}px 0 ${({$ratio:e})=>e*4}px;
 `,Nb=k.div`
-    margin-top: var(--spacing_x4);
+    margin-top: var(--spacing_x3);
 
     p + p {
         margin-top: var(--spacing_x2);
@@ -815,7 +826,7 @@ align-items: center;
 `,oZ=k(T3)`
   width: 100%;
   margin-top: var(--spacing_x8);
-`,CZ=()=>{const e=f5(),[i,l]=Z.useState(!1),[r,u]=Z.useState(null),[f,d]=Z.useState(0),[h,g]=Z.useState(!0),p=Z.useRef(),L=Z.useRef(),y=[{id:1,name:"Пакет",logo:Gf,text:"подписка за 1 рубль",ext:"5paket"},{id:2,name:"Пятёрочка",logo:Yf,text:"500 руб.",ext:"5ka"},{id:3,name:"Много лосося",logo:Xf,text:"10%",ext:"salmon"},{id:4,name:"5Post",logo:qf,text:"15%",ext:"5post"}],v=129*e,w=[];for(let _=0;_<43;_++)w.push(...y.map(B=>({...B,uniqueId:`${_}-${B.id}`})));const E=()=>{if(i)return;l(!0),u(null);const _=Math.floor(Math.random()*y.length),B=y[_],z=p?.current?.getBoundingClientRect().height/2,U=Math.floor((f+z)/v)%y.length;let O=_-U;O<0&&(O+=y.length);const H=5*y.length+O,P=f+H*v,N=4.5,Q=Date.now(),i1=()=>{const c1=Date.now()-Q,J=Math.min(c1/(N*1e3),1),l1=1-Math.pow(1-J,3),v1=f+(P-f)*l1;d(v1),J<1?requestAnimationFrame(i1):(u(B),l(!1))};requestAnimationFrame(i1)};return C.jsxs(Ib,{children:[C.jsx($f,{}),C.jsx(Wb,{$ratio:e,ref:p,children:C.jsx(tZ,{style:{y:-f},transition:{type:"tween",duration:0},children:w.map((_,B)=>C.jsx(Jb,{ref:L,$ratio:e,children:C.jsxs(iZ,{$index:i?0:Math.abs(B-2),$ratio:e,children:[C.jsx(aZ,{$ratio:e,src:_.logo}),C.jsxs("div",{children:[C.jsx(sZ,{$ratio:e,children:_.name}),C.jsx(lZ,{$ratio:e,children:_.text})]})]})},_.uniqueId))})}),C.jsx(rZ,{children:C.jsxs("svg",{width:"116",height:"170",viewBox:"0 0 116 170",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[C.jsx("g",{filter:"url(#filter0_dii_471_58)",children:C.jsx("path",{d:"M54.9181 88.9229C51.5047 87.4214 51.5047 82.5786 54.9181 81.0771L120.989 52.0136C123.821 50.7676 127 52.8422 127 55.9365L127 114.063C127 117.158 123.821 119.232 120.989 117.986L54.9181 88.9229Z",fill:"#60AF2C"})}),C.jsx("defs",{children:C.jsxs("filter",{id:"filter0_dii_471_58",x:"0.929825",y:"0.217453",width:"177.499",height:"169.565",filterUnits:"userSpaceOnUse",colorInterpolationFilters:"sRGB",children:[C.jsx("feFlood",{"flood-opacity":"0",result:"BackgroundImageFix"}),C.jsx("feColorMatrix",{in:"SourceAlpha",type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",result:"hardAlpha"}),C.jsx("feOffset",{}),C.jsx("feGaussianBlur",{stdDeviation:"25.7143"}),C.jsx("feComposite",{in2:"hardAlpha",operator:"out"}),C.jsx("feColorMatrix",{type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"}),C.jsx("feBlend",{mode:"normal",in2:"BackgroundImageFix",result:"effect1_dropShadow_471_58"}),C.jsx("feBlend",{mode:"normal",in:"SourceGraphic",in2:"effect1_dropShadow_471_58",result:"shape"}),C.jsx("feColorMatrix",{in:"SourceAlpha",type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",result:"hardAlpha"}),C.jsx("feOffset",{dx:"2.57143",dy:"-2.57143"}),C.jsx("feGaussianBlur",{stdDeviation:"2.57143"}),C.jsx("feComposite",{in2:"hardAlpha",operator:"arithmetic",k2:"-1",k3:"1"}),C.jsx("feColorMatrix",{type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"}),C.jsx("feBlend",{mode:"normal",in2:"shape",result:"effect2_innerShadow_471_58"}),C.jsx("feColorMatrix",{in:"SourceAlpha",type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",result:"hardAlpha"}),C.jsx("feOffset",{dx:"-2.57143",dy:"2.57143"}),C.jsx("feGaussianBlur",{stdDeviation:"4.28571"}),C.jsx("feComposite",{in2:"hardAlpha",operator:"arithmetic",k2:"-1",k3:"1"}),C.jsx("feColorMatrix",{type:"matrix",values:"0 0 0 0 0.998329 0 0 0 0 0.998329 0 0 0 0 0.998329 0 0 0 0.38 0"}),C.jsx("feBlend",{mode:"normal",in2:"effect2_innerShadow_471_58",result:"effect3_innerShadow_471_58"})]})})]})}),C.jsx(oZ,{onClick:E,disabled:i||r,children:"Пуск!"}),C.jsxs(J9,{children:[r&&C.jsx(kb,{prizeId:r.ext}),h&&C.jsx(Fb,{onClose:()=>g(!1)})]})]})},Kf="/assets/botAvatar-w-F934xd.png",uZ=k(J1.div)`
+`,CZ=()=>{const e=f5(),[i,l]=Z.useState(!1),[r,u]=Z.useState({ext:"salmon"}),[f,d]=Z.useState(0),[h,g]=Z.useState(!0),p=Z.useRef(),L=Z.useRef(),y=[{id:1,name:"Пакет",logo:Gf,text:"подписка за 1 рубль",ext:"5paket"},{id:2,name:"Пятёрочка",logo:Yf,text:"500 руб.",ext:"5ka"},{id:3,name:"Много лосося",logo:Xf,text:"10%",ext:"salmon"},{id:4,name:"5Post",logo:qf,text:"15%",ext:"5post"}],v=129*e,w=[];for(let _=0;_<43;_++)w.push(...y.map(B=>({...B,uniqueId:`${_}-${B.id}`})));const E=()=>{if(i)return;l(!0),u(null);const _=Math.floor(Math.random()*y.length),B=y[_],z=p?.current?.getBoundingClientRect().height/2,U=Math.floor((f+z)/v)%y.length;let O=_-U;O<0&&(O+=y.length);const H=5*y.length+O,P=f+H*v,N=4.5,Q=Date.now(),i1=()=>{const c1=Date.now()-Q,J=Math.min(c1/(N*1e3),1),l1=1-Math.pow(1-J,3),v1=f+(P-f)*l1;d(v1),J<1?requestAnimationFrame(i1):(u(B),l(!1))};requestAnimationFrame(i1)};return C.jsxs(Ib,{children:[C.jsx($f,{}),C.jsx(Wb,{$ratio:e,ref:p,children:C.jsx(tZ,{style:{y:-f},transition:{type:"tween",duration:0},children:w.map((_,B)=>C.jsx(Jb,{ref:L,$ratio:e,children:C.jsxs(iZ,{$index:i?0:Math.abs(B-2),$ratio:e,children:[C.jsx(aZ,{$ratio:e,src:_.logo}),C.jsxs("div",{children:[C.jsx(sZ,{$ratio:e,children:_.name}),C.jsx(lZ,{$ratio:e,children:_.text})]})]})},_.uniqueId))})}),C.jsx(rZ,{children:C.jsxs("svg",{width:"116",height:"170",viewBox:"0 0 116 170",fill:"none",xmlns:"http://www.w3.org/2000/svg",children:[C.jsx("g",{filter:"url(#filter0_dii_471_58)",children:C.jsx("path",{d:"M54.9181 88.9229C51.5047 87.4214 51.5047 82.5786 54.9181 81.0771L120.989 52.0136C123.821 50.7676 127 52.8422 127 55.9365L127 114.063C127 117.158 123.821 119.232 120.989 117.986L54.9181 88.9229Z",fill:"#60AF2C"})}),C.jsx("defs",{children:C.jsxs("filter",{id:"filter0_dii_471_58",x:"0.929825",y:"0.217453",width:"177.499",height:"169.565",filterUnits:"userSpaceOnUse",colorInterpolationFilters:"sRGB",children:[C.jsx("feFlood",{"flood-opacity":"0",result:"BackgroundImageFix"}),C.jsx("feColorMatrix",{in:"SourceAlpha",type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",result:"hardAlpha"}),C.jsx("feOffset",{}),C.jsx("feGaussianBlur",{stdDeviation:"25.7143"}),C.jsx("feComposite",{in2:"hardAlpha",operator:"out"}),C.jsx("feColorMatrix",{type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0"}),C.jsx("feBlend",{mode:"normal",in2:"BackgroundImageFix",result:"effect1_dropShadow_471_58"}),C.jsx("feBlend",{mode:"normal",in:"SourceGraphic",in2:"effect1_dropShadow_471_58",result:"shape"}),C.jsx("feColorMatrix",{in:"SourceAlpha",type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",result:"hardAlpha"}),C.jsx("feOffset",{dx:"2.57143",dy:"-2.57143"}),C.jsx("feGaussianBlur",{stdDeviation:"2.57143"}),C.jsx("feComposite",{in2:"hardAlpha",operator:"arithmetic",k2:"-1",k3:"1"}),C.jsx("feColorMatrix",{type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"}),C.jsx("feBlend",{mode:"normal",in2:"shape",result:"effect2_innerShadow_471_58"}),C.jsx("feColorMatrix",{in:"SourceAlpha",type:"matrix",values:"0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0",result:"hardAlpha"}),C.jsx("feOffset",{dx:"-2.57143",dy:"2.57143"}),C.jsx("feGaussianBlur",{stdDeviation:"4.28571"}),C.jsx("feComposite",{in2:"hardAlpha",operator:"arithmetic",k2:"-1",k3:"1"}),C.jsx("feColorMatrix",{type:"matrix",values:"0 0 0 0 0.998329 0 0 0 0 0.998329 0 0 0 0 0.998329 0 0 0 0.38 0"}),C.jsx("feBlend",{mode:"normal",in2:"effect2_innerShadow_471_58",result:"effect3_innerShadow_471_58"})]})})]})}),C.jsx(oZ,{onClick:E,disabled:i||r,children:"Пуск!"}),C.jsxs(J9,{children:[r&&C.jsx(kb,{prizeId:r.ext}),h&&C.jsx(Fb,{onClose:()=>g(!1)})]})]})},Kf="/assets/botAvatar-w-F934xd.png",uZ=k(J1.div)`
     position: absolute;
     bottom: ${({$bottom:e})=>e}px;
     left: var(--spacing_x3);
