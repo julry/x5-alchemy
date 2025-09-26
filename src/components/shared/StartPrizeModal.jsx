@@ -3,7 +3,6 @@ import { useSizeRatio } from "../../hooks/useSizeRatio"
 import { motion } from "framer-motion";
 import { Button } from "./Button";
 import prize from '../../assets/images/prize.png';
-import { useState } from "react";
 
 const Wrapper = styled(motion.div)`
     position: fixed;
@@ -43,7 +42,7 @@ const Pic = styled.img`
     object-fit: contain;
 `
 const TextWrapper = styled.div`
-    padding-right: var(--spacing_x3);
+    padding-right: var(--spacing_x7);
     margin-top: ${({ $ratio }) => $ratio * 24}px;
     width: 100%;
 
@@ -90,7 +89,7 @@ export const StartPrizeModal = ({onClose}) => {
                     >
                     </Pic>
                     <TextWrapper $ratio={ratio}>
-                        <p>Отлично, карточка с твоим именем нашла своё место на доске почёта Центра Инноваций X5. Результаты розыгрыша больших призов будут после [ДАТА]. А пока ты можешь получить небольшой <b>подарок</b> от нашей команды.</p>
+                        <p>Отлично, карточка с твоим именем нашла своё место на доске почёта Центра Инноваций X5. Результаты розыгрыша больших призов будут после <b>29 октября</b>. А пока ты можешь получить небольшой <b>подарок</b> от нашей команды.</p>
                     </TextWrapper>
                 </ContentWrapper>
                 <ButtonStyled $ratio={ratio} onClick={onClose}>Отлично</ButtonStyled>
