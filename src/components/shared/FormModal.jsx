@@ -17,10 +17,10 @@ const Wrapper = styled(motion.div)`
     background-color: rgba(0,0,0,0.8);
     padding: var(--spacing_x4);
     backdrop-filter: blur(5px);
-    line-height: 110%;
+    line-height: 115%;
 
     @media screen and (max-height: 700px){
-        line-height: 105%;
+        line-height: 110%;
     }
 `;
 
