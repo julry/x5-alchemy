@@ -1,4 +1,4 @@
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import styled from "styled-components";
 import { DndContext, MouseSensor, TouchSensor, useSensor, useSensors } from '@dnd-kit/core';
 import { ElementsField } from "../shared/ElementsField";
@@ -11,7 +11,7 @@ import { Trash } from "../shared/svgs/Trash";
 import { GameHeader } from "../shared/GameHeader";
 import { Element } from "../shared/Element";
 import { uid } from "uid";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { CheckModal } from "../shared/HelpModal";
 import { ElementModal } from "../shared/ElementModal";
 import { FormModal } from "../shared/FormModal";
@@ -81,6 +81,26 @@ const RemoveButton = styled(IconButton)`
     z-index: 65;
 `;
 
+const Tip = styled(motion.div)`
+    position: absolute;
+    top: var(--spacing_x6);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4A4F4A;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing_x3);
+    z-index: 32;
+
+    & p {
+        width: max-content;
+    }
+`;
+
+
+const TIP_TIMEOUT = 60 * 1000;
+const TIP_UNSUCCESS_TIMES = 5;
+
 export const Game = () => {
     const ratio = useSizeRatio();
     const [page, setPage] = useState(1);
@@ -90,9 +110,13 @@ export const Game = () => {
     const [discoveredElements, setDiscoveredElements] = useState([]);
     const [isInfo, setIsInfo] = useState(false);
     const [isForm, setIsForm] = useState(false);
+    const [isTip, setIsTip] = useState(false);
     const [isDiscoveredModal, setIsDiscoveredModal] = useState({ shown: false, element: null });
     const mergeField = useRef();
     const trashBtn = useRef();
+    const openedElements = useRef(0);
+    const unsucessTimes = useRef(0);
+    const timerRef = useRef();
 
     const sensors = useSensors(
         useSensor(MouseSensor),
@@ -113,12 +137,20 @@ export const Game = () => {
         return ({x, y});
     }
     
+    useEffect(() => {
+        timerRef.current = setTimeout(() => {
+            setIsTip(true);
+        }, TIP_TIMEOUT);
+    }, []);
+
+
     const combineElements = (element1, element2) => {
         const sortedElements = [element1.data.current.id, element2.data.current.id].sort((a) => -1 * +!!['work', 'flexibility'].includes(a));
 
         const combinationKey = `${sortedElements[0]}+${sortedElements[1]}`;
 
         if (combinations[combinationKey]) {
+            unsucessTimes.current = 0;
             const newElement = combinations[combinationKey];
             const element = elements.find(({ id }) => id === newElement);
 
@@ -130,6 +162,19 @@ export const Game = () => {
                 if (element.page === 3) {
                     setUnitsAmount(prev => prev + 1);
                 }
+
+                if (element.page === 2) {
+                    if (isTip) setIsTip(false);
+
+                    openedElements.current += 1;
+                    clearTimeout(timerRef.current);
+
+                    if (openedElements.current < 11) {
+                        timerRef.current = setTimeout(() => {
+                            setIsTip(true);
+                        }, TIP_TIMEOUT);
+                    }
+                }
             }
 
             setFieldElements(prev => [...prev.filter(el => el.extId !== element1.id && el.extId !== element2.id), {
@@ -140,6 +185,13 @@ export const Game = () => {
             }])
 
             return true;
+        }
+
+        unsucessTimes.current += 1;
+
+        if (unsucessTimes.current >= TIP_UNSUCCESS_TIMES && openedElements.current < 11) {
+            clearTimeout(timerRef.current);
+            setIsTip(true);
         }
     };
 
@@ -242,6 +294,11 @@ export const Game = () => {
                 {isInfo && (<CheckModal onClose={() => setIsInfo(false)} discoveredElements={discoveredElements}/>)}
                 {isForm && (<FormModal/>)}
                 {isDiscoveredModal.shown && (<ElementModal elementId={isDiscoveredModal.element} onClose={handleClose}/>)}
+                {isTip && (
+                    <Tip initial={{opacity: 0, scale: 0, x: '-50%'}} animate={{opacity: 1, scale: 1}} exit={{opacity: 0, scale: 0}}> 
+                        <p>Попробуй добавить гибкость</p>
+                    </Tip>
+                )}
             </AnimatePresence>
         </>
     )

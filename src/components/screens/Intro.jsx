@@ -7,6 +7,7 @@ import { ArrowButton } from "../shared/Button";
 import { Logo } from "../shared/svgs/Logo";
 import { useProgress } from "../../contexts/ProgressContext";
 import pic from '../../assets/images/intro.png';
+import { reachMetrikaGoal } from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(FlexWrapper)`
     position: relative;
@@ -34,11 +35,20 @@ const InfoBlock = styled.div`
     width: ${({$ratio}) => $ratio * 380}px;
     height: ${({$ratio}) => $ratio * 426}px;
     z-index: 1;
+`;
+
+const TextPartWrapper = styled.div`
+    padding-top: ${({$ratio}) => $ratio * 130}px;
+    padding-left: var(--spacing_x4);
 
     & p {
-        padding: ${({$ratio}) => $ratio * 100}px var(--spacing_x5);
+        padding-right: var(--spacing_x5);
     }
 `;
+
+const TextStyled = styled.p`
+    padding: 0 !important;
+`
 
 const ArrowButtonStyled = styled(ArrowButton)`
     position: absolute;
@@ -63,6 +73,7 @@ export const Intro = () => {
             return;
         }
 
+        // reachMetrikaGoal('');
         next();
     }
 
@@ -72,9 +83,14 @@ export const Intro = () => {
             <InfoBlock $ratio={ratio}>
                 {
                     part === 0 ? (
-                        <p>Добро пожаловать в <b>Центр Инноваций Х5 </b>— место, где создают будущее ритейла и строят карьеру мечты. Здесь мы ломаем стереотипы о работе, собирая профессиональные треки как конструктор. Команда Центра Инноваций X5 срочно улетает на нетворкинг с роботами-кладовщиками, а ты остаешься за главного</p>
+                        <TextPartWrapper $ratio={ratio}>
+                            <TextStyled>Добро пожаловать в <b>Центр Инноваций Х5.</b></TextStyled>
+                            <p>Это место, где создают будущее ритейла и строят карьеру мечты. Здесь мы ломаем стереотипы о работе, собирая профессиональные треки как конструктор. Команда Центра Инноваций X5 срочно улетает на нетворкинг с роботами-кладовщиками, а ты остаешься за главного</p>
+                        </TextPartWrapper>
                     ) : (
-                        <p><b>Твоя миссия</b> — не найти, а изобрести идеальный карьерный трек под кодовым названием «X5». Используй наши наработки, цифровые прототипы и свою интуицию. Если справишься, то получишь <b>подарок от нашей команды:</b> три сертификата в Пятёрочку и три сертификата в Перекрёсток на 3 000 рублей.</p>
+                        <TextPartWrapper $ratio={ratio}>
+                            <p><b>Твоя миссия</b> — не найти, а изобрести идеальный карьерный трек под кодовым названием «X5». Используй наши наработки, цифровые прототипы и свою интуицию. Если справишься, то получишь <b>подарок от нашей команды:</b> три сертификата в Пятёрочку и три сертификата в Перекрёсток на 3 000 рублей.</p>
+                        </TextPartWrapper>
                     )
                 }
             </InfoBlock>

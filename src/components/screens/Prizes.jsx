@@ -12,6 +12,7 @@ import logoPaket from '../../assets/images/logoPaket.svg';
 import logoPost from '../../assets/images/logoPost.svg';
 import { PrizeModal } from '../shared/PrizeModal';
 import { StartPrizeModal } from '../shared/StartPrizeModal';
+import { reachMetrikaGoal } from '../../utils/reachMetrikaGoal';
 
 const Wrapper = styled(ContentWrapper)`
     background: url(${bg}) no-repeat 0 100%;
@@ -133,7 +134,8 @@ const GiftScroll = () => {
 
     const spin = () => {
         if (isSpinning) return;
-
+        // reachMetrikaGoal('');
+        
         setIsSpinning(true);
         setCurrentPrize(null);
 

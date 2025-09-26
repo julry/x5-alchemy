@@ -289,7 +289,7 @@ export const FormModal = () => {
                                 Политикой обработки персональных данных
                             </Link>, а также с {"\u00A0"}
                             <Link
-                                href={'https://worklifealfa.fut.ru/agreement.pdf'}
+                                href={'/agreement.pdf'}
                                 target="_blank"
                                 rel="noreferrer"
                             >правилами проведения акции</Link>.

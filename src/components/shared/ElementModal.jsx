@@ -56,14 +56,6 @@ const Pic = styled.div`
         transform: scale(${({$scale}) => $scale});
         transform-origin: 0% 0%;
         align-items: flex-start;
-
-        & div:last-child {
-            left: 0%;
-            transform: none;
-            & p{
-                padding-left: ${({$pl}) => $pl}px;
-            }
-        }
     }
 `
 const TextWrapper = styled.div`

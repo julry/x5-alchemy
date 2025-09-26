@@ -18,25 +18,6 @@ const Wrapper = styled(motion.div)`
     width: ${({$width}) => $width}px;
 `;
 
-const TextWrapper = styled.div`
-    position: absolute;
-    bottom: ${({$bottom}) => $bottom ?? 0}px;
-    height: ${({$ratio}) => $ratio * 13.33}px;
-    font-size: ${({$ratio}) => $ratio * 8.89}px;
-    left: ${({$left}) => ($left ?? 50)}%;
-    transform: translateX(-50%);
-    font-weight: 700;
-    line-height: 95%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    & p {
-        text-align: center;
-        width: max-content;
-    }
-`;
-
 const SvgWrapper = styled.div`
     width: 100%;
     height: 100%;
@@ -147,14 +128,6 @@ export const Element = ({isDraggable, element, className, pathColor = '#0C3615',
                     $right={element.right * ratio}
                 />
             </PicWrapper>
-            <TextWrapper 
-                $ratio={ratio} 
-                $bgText={pathColor} 
-                $left={element.textLeft} 
-                $bottom={element.textBottom ? element.textBottom * ratio : undefined}
-            >
-                <p><b>{element.name}</b></p>
-            </TextWrapper>
         </Wrapper>
     )
 }
