@@ -15,6 +15,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { CheckModal } from "../shared/HelpModal";
 import { ElementModal } from "../shared/ElementModal";
 import { FormModal } from "../shared/FormModal";
+import { reachMetrikaGoal } from "../../utils/reachMetrikaGoal";
 
 const Content = styled(FlexWrapper)`
     position: absolute;
@@ -160,6 +161,9 @@ export const Game = () => {
                 setTimeout(() => setIsDiscoveredModal({ shown: true, element: newElement }), 300);
 
                 if (element.page === 3) {
+                    if (element.metrikaName) {
+                        reachMetrikaGoal(`unit_${element.metrikaName}`);
+                    }
                     setUnitsAmount(prev => prev + 1);
                 }
 

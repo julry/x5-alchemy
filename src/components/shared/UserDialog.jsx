@@ -44,9 +44,9 @@ export const UserDialog = ({text, onNext, bottom, isCenter}) => {
         <DialogWrapper 
             $ratio={ratio} 
             $bottom={bottom * ratio}
-            initial={{opacity: 0, height: 0, width: 0, 'white-space': 'nowrap'}}
-            animate={{opacity: 1, height: 140 * ratio + 'px', width: 298 * ratio + 'px', 'white-space': 'break-spaces'}}
-            exit={{opacity: 0, height: 0, width: 0, 'white-space': 'nowrap'}}
+            initial={{opacity: 0, height: 0, width: 0, 'whiteSpace': 'nowrap'}}
+            animate={{opacity: 1, height: 140 * ratio + 'px', width: 298 * ratio + 'px', 'whiteSpace': 'break-spaces'}}
+            exit={{opacity: 0, height: 0, width: 0, 'whiteSpace': 'nowrap'}}
             transition={{delay: 2, duration: 0.3}}
         >
             <svg width="100%" height="100%" viewBox="0 0 298 140" fill="none" xmlns="http://www.w3.org/2000/svg">

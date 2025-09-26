@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import logo from '../../assets/images/formLogo.png';
 import { useSizeRatio } from "../../hooks/useSizeRatio";
 import { Button } from "./Button";
+import { reachMetrikaGoal } from "../../utils/reachMetrikaGoal";
 
 const Wrapper = styled(motion.div)`
     position: fixed;
@@ -170,7 +171,6 @@ export const FormModal = () => {
 
         const result = await registrateEmail({email, isAdsAgreed});
 
-        console.log(result);
         if (result?.hasUser) {
             setIsAlreadyHas(true);
             setIsSending(false);
@@ -184,6 +184,8 @@ export const FormModal = () => {
 
             return;
         }
+
+        reachMetrikaGoal('email');
 
         setIsSending(false);
         next();
@@ -207,7 +209,7 @@ export const FormModal = () => {
         setEmail(e.target.value);
     };
 
-    const btnDisabled = !name || !email || !isAgreed;
+    const btnDisabled = !name || !email || !isAgreed || !isCorrect;
 
     return (
         <Wrapper>
@@ -215,7 +217,7 @@ export const FormModal = () => {
                 <svg width="100%" height="100%" viewBox="0 0 380 713" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <foreignObject x="-10" y="-9.99997" width="400" height="733"><Content xmlns="http://www.w3.org/1999/xhtml" /></foreignObject><g data-figma-bg-blur-radius="10">
                         <path d="M276.8 713C268.367 713 260.552 708.574 256.216 701.341L224.931 649.159C220.595 641.926 212.78 637.5 204.347 637.5L24 637.5C10.7452 637.5 7.53979e-06 626.755 8.69857e-06 613.5L2.97167e-05 24C3.08755e-05 10.7452 10.7452 2.87539e-05 24 2.99126e-05L147.642 4.07218e-05C156.39 4.14865e-05 164.445 4.75969 168.665 12.4223L192.982 56.5778C197.202 64.2405 205.257 69 214.005 69L356 69.0001C369.255 69.0001 380 79.7452 380 93.0001L380 689C380 702.255 369.255 713 356 713L276.8 713Z" fill="#083617" />
-                        <path d="M356 712.5L276.8 712.5C268.542 712.5 260.891 708.166 256.645 701.084L225.36 648.902C220.934 641.519 212.956 637 204.347 637L24 637C11.0213 637 0.500028 626.479 0.500009 613.5L0.50006 24C0.500061 11.0213 11.0214 0.500029 24.0001 0.50003L147.642 0.500041C156.207 0.500041 164.094 5.16037 168.227 12.6631L192.544 56.8194C196.852 64.6416 205.075 69.5 214.005 69.5L356 69.5001C368.979 69.5001 379.5 80.0214 379.5 93.0001L379.5 689C379.5 701.979 368.979 712.5 356 712.5Z" stroke="#60AF2C" stroke-opacity="0.25" />
+                        <path d="M356 712.5L276.8 712.5C268.542 712.5 260.891 708.166 256.645 701.084L225.36 648.902C220.934 641.519 212.956 637 204.347 637L24 637C11.0213 637 0.500028 626.479 0.500009 613.5L0.50006 24C0.500061 11.0213 11.0214 0.500029 24.0001 0.50003L147.642 0.500041C156.207 0.500041 164.094 5.16037 168.227 12.6631L192.544 56.8194C196.852 64.6416 205.075 69.5 214.005 69.5L356 69.5001C368.979 69.5001 379.5 80.0214 379.5 93.0001L379.5 689C379.5 701.979 368.979 712.5 356 712.5Z" stroke="#60AF2C" strokeOpacity="0.25" />
                     </g>
                     <defs>
                         <clipPath id="bgblur_0_426_1813_clip_path" transform="translate(10 9.99997)"><path d="M276.8 713C268.367 713 260.552 708.574 256.216 701.341L224.931 649.159C220.595 641.926 212.78 637.5 204.347 637.5L24 637.5C10.7452 637.5 7.53979e-06 626.755 8.69857e-06 613.5L2.97167e-05 24C3.08755e-05 10.7452 10.7452 2.87539e-05 24 2.99126e-05L147.642 4.07218e-05C156.39 4.14865e-05 164.445 4.75969 168.665 12.4223L192.982 56.5778C197.202 64.2405 205.257 69 214.005 69L356 69.0001C369.255 69.0001 380 79.7452 380 93.0001L380 689C380 702.255 369.255 713 356 713L276.8 713Z" />

@@ -134,7 +134,7 @@ const GiftScroll = () => {
 
     const spin = () => {
         if (isSpinning) return;
-        // reachMetrikaGoal('');
+        reachMetrikaGoal('gift');
         
         setIsSpinning(true);
         setCurrentPrize(null);
@@ -215,7 +215,7 @@ const GiftScroll = () => {
                     </g>
                     <defs>
                         <filter id="filter0_dii_471_58" x="0.929825" y="0.217453" width="177.499" height="169.565" filterUnits="userSpaceOnUse" colorInterpolationFilters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                            <feFlood floodOpacity="0" result="BackgroundImageFix" />
                             <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
                             <feOffset />
                             <feGaussianBlur stdDeviation="25.7143" />

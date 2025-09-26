@@ -12,6 +12,7 @@ import {elements} from '../../constants/elements';
 import { Trash } from "../shared/svgs/Trash";
 import { GameHeader } from "../shared/GameHeader";
 import { useProgress } from "../../contexts/ProgressContext";
+import { reachMetrikaGoal } from "../../utils/reachMetrikaGoal";
 
 const Content = styled(FlexWrapper)`
     position: absolute;
@@ -99,6 +100,11 @@ export const Rules = () => {
         const newPart = part + 1;
         setPart();
         setTimeout(() =>  setPart(newPart), 300);
+    }
+
+    const handleEnd = () => {
+        reachMetrikaGoal('finished_training');
+        next();
     }
 
     const exampleElement1 = elements.find(({id}) => id === 'effectivity');
@@ -219,7 +225,7 @@ export const Rules = () => {
                                     exit={{opacity: 0, height: 0}}
                                 >
                                     <BotDialog key={`${part}_bot`} part={part} />
-                                    <UserDialog key={`${part}_dialog`} isCenter bottom={40} text="Спасибо!" onNext={() => next()}/>
+                                    <UserDialog key={`${part}_dialog`} isCenter bottom={40} text="Спасибо!" onNext={handleEnd}/>
                                 </motion.div>
                             </>
                         )

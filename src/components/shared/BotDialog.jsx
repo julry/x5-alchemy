@@ -102,8 +102,8 @@ const config = {
         component: () => (
             <svg width="100%" height="100%" viewBox="0 0 382 244" fill="none" xmlns="http://www.w3.org/2000/svg">
             <foreignObject x="-80" y="-80" width="542" height="404"><Dialog2 xmlns="http://www.w3.org/1999/xhtml"></Dialog2></foreignObject><g data-figma-bg-blur-radius="80">
-            <path d="M78.5 244L24 244C10.7452 244 9.39372e-07 233.255 2.09815e-06 220L-1.12846e-05 24.0001C-1.01258e-05 10.7453 10.7451 0.000104873 24 7.55142e-05L59.304 3.28242e-05C68.749 1.83911e-05 77.3158 5.53969 81.191 14.1531L92.4561 39.1921C96.3312 47.8055 104.898 53.3452 114.343 53.3452L358 53.3452C371.255 53.3452 382 64.0904 382 77.3452L382 220C382 233.255 371.255 244 358 244L78.5 244Z" fill="#4A4F4A" fill-opacity="1"/>
-            <path d="M358 243.5L24 243.5C11.0213 243.5 0.500001 232.979 0.500002 220L0.500019 24C0.500078 11.0213 11.0214 0.499997 24 0.499969L59.3037 0.499972C68.5519 0.499958 76.941 5.92442 80.7354 14.3584L92 39.3974C95.9559 48.1902 104.701 53.8456 114.343 53.8457L358 53.8457C370.979 53.8457 381.5 64.367 381.5 77.3457L381.5 220C381.5 232.979 370.979 243.5 358 243.5Z" stroke="white" stroke-opacity="0.2"/>
+            <path d="M78.5 244L24 244C10.7452 244 9.39372e-07 233.255 2.09815e-06 220L-1.12846e-05 24.0001C-1.01258e-05 10.7453 10.7451 0.000104873 24 7.55142e-05L59.304 3.28242e-05C68.749 1.83911e-05 77.3158 5.53969 81.191 14.1531L92.4561 39.1921C96.3312 47.8055 104.898 53.3452 114.343 53.3452L358 53.3452C371.255 53.3452 382 64.0904 382 77.3452L382 220C382 233.255 371.255 244 358 244L78.5 244Z" fill="#4A4F4A" fillOpacity="1"/>
+            <path d="M358 243.5L24 243.5C11.0213 243.5 0.500001 232.979 0.500002 220L0.500019 24C0.500078 11.0213 11.0214 0.499997 24 0.499969L59.3037 0.499972C68.5519 0.499958 76.941 5.92442 80.7354 14.3584L92 39.3974C95.9559 48.1902 104.701 53.8456 114.343 53.8457L358 53.8457C370.979 53.8457 381.5 64.367 381.5 77.3457L381.5 220C381.5 232.979 370.979 243.5 358 243.5Z" stroke="white" strokeOpacity="0.2"/>
             </g>
             <defs>
             <clipPath id="bgblur_0_418_4625_clip_path" transform="translate(80 80)"><path d="M78.5 244L24 244C10.7452 244 9.39372e-07 233.255 2.09815e-06 220L-1.12846e-05 24.0001C-1.01258e-05 10.7453 10.7451 0.000104873 24 7.55142e-05L59.304 3.28242e-05C68.749 1.83911e-05 77.3158 5.53969 81.191 14.1531L92.4561 39.1921C96.3312 47.8055 104.898 53.3452 114.343 53.3452L358 53.3452C371.255 53.3452 382 64.0904 382 77.3452L382 220C382 233.255 371.255 244 358 244L78.5 244Z"/>
@@ -152,9 +152,9 @@ export const BotDialog = ({ part }) => {
         <DialogWrapper
             $ratio={ratio}
             $bottom={dialog.bottom * ratio}
-            initial={{ opacity: 0, height: 0, width: 0, 'white-space': 'nowrap' }}
-            animate={{ opacity: 1, height: dialog.height * ratio + 'px', width: config[`part${part}`].width * ratio + 'px', 'white-space': 'break-spaces' }}
-            exit={{ opacity: 0, height: 0, width: 0, 'white-space': 'nowrap' }}
+            initial={{ opacity: 0, height: 0, width: 0, 'whiteSpace': 'nowrap' }}
+            animate={{ opacity: 1, height: dialog.height * ratio + 'px', width: config[`part${part}`].width * ratio + 'px', 'whiteSpace': 'break-spaces' }}
+            exit={{ opacity: 0, height: 0, width: 0, 'whiteSpace': 'nowrap' }}
             transition={{ duration: 0.3 }}
         >
             <Avatar $ratio={ratio} />

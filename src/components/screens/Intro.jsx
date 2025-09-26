@@ -69,11 +69,11 @@ export const Intro = () => {
     const handleClick = () => {
         if (part === 0) {
             setPart(prev => prev + 1);
+            reachMetrikaGoal('start_game');
 
             return;
         }
 
-        // reachMetrikaGoal('');
         next();
     }
 
