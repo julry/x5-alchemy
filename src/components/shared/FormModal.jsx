@@ -274,22 +274,14 @@ export const FormModal = () => {
                             >
                                 обработку
                             </Link>{" "}
-                            и{"\u00A0"}
-                            <Link
-                                href={"https://fut.ru/personal_data_transfer_agreement"}
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                передачу
-                            </Link>{" "}
-                            моих персональных данных и соглашаюсь с {"\u00A0"}
+                            моих персональных данных и соглашаюсь с{"\u00A0"}
                             <Link
                                 href={'https://fut.ru/personal-data'}
                                 target="_blank"
                                 rel="noreferrer"
                             >
                                 Политикой обработки персональных данных
-                            </Link>, а также с {"\u00A0"}
+                            </Link>, а также с{"\u00A0"}
                             <Link
                                 href={'/agreement.pdf'}
                                 target="_blank"
