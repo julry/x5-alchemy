@@ -86,7 +86,7 @@ export const prizes = [
     },
     {
         id: '5paket',
-        promo: 'STUDY',
+        promo: 'PAKET2025',
         logo: logoPaket,
         title: 'Промокод Сервис Пакет',
         text: () => (

@@ -47,7 +47,7 @@ export const UserDialog = ({text, onNext, bottom, isCenter}) => {
             initial={{opacity: 0, height: 0, width: 0, 'whiteSpace': 'nowrap'}}
             animate={{opacity: 1, height: 140 * ratio + 'px', width: 298 * ratio + 'px', 'whiteSpace': 'break-spaces'}}
             exit={{opacity: 0, height: 0, width: 0, 'whiteSpace': 'nowrap'}}
-            transition={{delay: 2, duration: 0.3}}
+            transition={{delay: 0.8, duration: 0.3}}
         >
             <svg width="100%" height="100%" viewBox="0 0 298 140" fill="none" xmlns="http://www.w3.org/2000/svg">
             <foreignObject x="-80" y="-80" width="458" height="300">
@@ -64,7 +64,7 @@ export const UserDialog = ({text, onNext, bottom, isCenter}) => {
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}
                 exit={{opacity: 0}}
-                transition={{delay: 2.2, duration: 0.1}}
+                transition={{delay: 1, duration: 0.1}}
                 $isCenter={isCenter}
             >
                 {text}

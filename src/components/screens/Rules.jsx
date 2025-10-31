@@ -98,8 +98,21 @@ export const Rules = () => {
 
     const handleNext = () => {
         const newPart = part + 1;
+        switch (newPart) {
+            case 1: 
+                reachMetrikaGoal('start_training')
+                break; 
+            case 2: 
+                reachMetrikaGoal('first-stage_training')
+                break;
+            case 3:
+                reachMetrikaGoal('second-stage_training')
+                break;
+            default: 
+                break;
+        }
         setPart();
-        setTimeout(() =>  setPart(newPart), 300);
+        setTimeout(() => setPart(newPart), 300);
     }
 
     const handleEnd = () => {
